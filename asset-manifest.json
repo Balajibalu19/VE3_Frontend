@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/VE3_Frontend/static/css/main.4a7e6f5e.css",
+    "main.js": "/VE3_Frontend/static/js/main.579e279a.js",
+    "index.html": "/VE3_Frontend/index.html",
+    "main.4a7e6f5e.css.map": "/VE3_Frontend/static/css/main.4a7e6f5e.css.map",
+    "main.579e279a.js.map": "/VE3_Frontend/static/js/main.579e279a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a7e6f5e.css",
+    "static/js/main.579e279a.js"
+  ]
+}
