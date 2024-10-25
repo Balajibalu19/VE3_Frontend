@@ -1,0 +1,78 @@
+/* Dashboard container */
+.dashboard-container {
+    padding: 20px;
+    background-color: #f8f9fc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header section */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.new-task-btn {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-task-btn:hover {
+    background-color: #1c7cd6;
+}
+
+/* Notes container */
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.no-notes {
+    font-size: 20px;
+    color: #777;
+}
+
+/* Loading */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.loading-text {
+    font-size: 22px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .dashboard-header {
+        flex-direction: column;
+    }
+
+    .greeting {
+        margin-bottom: 10px;
+    }
+}
