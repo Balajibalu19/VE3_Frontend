@@ -1,8 +1,8 @@
 {
-  "name": "VE3_Frontend",
+  "name": "stknotes",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://Balajibalu19.github.io/VE3_Frontend/",
+  "private": false,
+  "homepage": "https://Balajibalu19.github.io/VE3F",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
