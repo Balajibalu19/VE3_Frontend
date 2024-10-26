@@ -1,5 +1,5 @@
 // config.js
-const backendUrl = "https://timely-kitsune-6eb842.netlify.app";
+const backendUrl = "http://localhost:5000";
 console.log("backendUrl=",backendUrl)
 module.exports = {
     backendUrl
