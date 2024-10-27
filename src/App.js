@@ -28,25 +28,25 @@ function App() {
       {/* Header */}
       <header style={styles.header}>
         <Link to="/STK_Notes_Frontend" style={styles.title}>
-          <h1>Organize and Track Your Tasks</h1>
+          <h1 style={styles.heading}>Organize and Track Your Tasks</h1>
         </Link>
         <nav style={styles.nav}>
           {loggedIn ? (
             <>
               <Link to="/STK_Notes_Frontend/dashboard">
-                <button className="btn dashboard_btn" style={styles.button}>Dashboard</button>
+                <button style={styles.button}>Dashboard</button>
               </Link>
               <Link to="/STK_Notes_Frontend">
-                <button className="btn logout_btn" style={styles.button} onClick={handleLogout}>Logout</button>
+                <button style={styles.button} onClick={handleLogout}>Logout</button>
               </Link>
             </>
           ) : (
             <>
               <Link to="/STK_Notes_Frontend/login">
-                <button className="btn login_btn" style={styles.button}>Login</button>
+                <button style={styles.button}>Login</button>
               </Link>
               <Link to="/STK_Notes_Frontend/signup">
-                <button className="btn signup_btn" style={styles.button}>Signup</button>
+                <button style={styles.button}>Signup</button>
               </Link>
             </>
           )}
@@ -56,12 +56,12 @@ function App() {
       {/* Main Content */}
       <main style={styles.main}>
         <Routes>
-          <Route path="/STK_Notes_Frontend" element={<Home />} />
+          <Route path="/Task_FrontendVE3" element={<Home />} />
           <Route path="/STK_Notes_Frontend/signup" element={<Signup />} />
           <Route path="/STK_Notes_Frontend/login" element={<Login setLoggedIn={setLoggedIn} />} />
           <Route path="/STK_Notes_Frontend/dashboard" element={<DashBoard loggedIn={loggedIn} />} />
           <Route path="/STK_Notes_Frontend/newnote" element={<NewNote loggedIn={loggedIn} />} />
-          <Route path="/STK_Notes_Frontend/note/:id" element={<NoteDetail />} /> {/* Route for note details */}
+          <Route path="/STK_Notes_Frontend/note/:id" element={<NoteDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -97,49 +97,57 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    backgroundColor: '#F3F4F6', // Light gray background
+    backgroundColor: '#F3F4F6',
     color: '#333',
   },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    background: '#4A90E2', // Blue header
+    background: '#4A90E2',
     padding: '20px 30px',
     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
   },
   title: {
     textDecoration: 'none',
-    color: '#FFFFFF', // White title color
-    fontSize: '30px', // Increased font size
-    fontWeight: '700', // Bold title
+    color: '#FFFFFF',
+  },
+  heading: {
+    fontSize: '26px',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
   nav: {
     display: 'flex',
     gap: '15px',
   },
   button: {
-    padding: '10px 25px', // Increased button padding
-    borderRadius: '30px', // More rounded buttons
-    border: 'none',
+    padding: '10px 25px',
+    borderRadius: '25px',
+    border: '2px solid transparent',
     cursor: 'pointer',
-    background: '#F39C12', // Orange button background
-    color: '#FFFFFF', // White button text
-    boxShadow: '0 3px 6px rgba(0, 0, 0, 0.2)', // Button shadow
-    transition: 'background 0.3s ease, transform 0.2s ease',
-    fontWeight: '600',
-    fontSize: '16px', // Font size for buttons
+    color: '#FFFFFF',
+    fontWeight: '700',
+    fontSize: '14px',
+    background: 'linear-gradient(45deg, #FF7E5F, #FD3A69)',
+    transition: 'all 0.4s ease, background 0.8s ease',
+    boxShadow: '0 4px 8px rgba(255, 126, 95, 0.4)',
+    backgroundSize: '200% 200%',
+    animation: 'gradientShift 5s ease infinite',
+    display: 'inline-block',
+    position: 'relative',
+    overflow: 'hidden',
   },
   main: {
     flex: 1,
     padding: '30px',
-    background: '#FFFFFF', // White main content area
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)', // Main content shadow
+    background: '#FFFFFF',
+    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
   },
   footer: {
     textAlign: 'center',
     padding: '30px 0',
-    background: '#2C3E50', // Darker background for footer
+    background: '#2C3E50',
     color: '#FFFFFF',
     position: 'relative',
   },
@@ -155,16 +163,29 @@ const styles = {
   iconContainer: {
     display: 'flex',
     justifyContent: 'center',
-    gap: '15px', // Space between icons
+    gap: '15px',
   },
   iconLink: {
     display: 'inline-block',
   },
   icon: {
-    width: '30px', // Icon size
+    width: '30px',
     height: '30px',
-    transition: 'transform 0.3s ease', // Animation on hover
+    transition: 'transform 0.3s ease',
   },
 };
+
+// CSS Keyframes for Gradient Animation
+const gradientAnimation = `
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+`;
+
+// Inject the keyframes animation into the document
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule(gradientAnimation, styleSheet.cssRules.length);
 
 export default App;
